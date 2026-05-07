@@ -1,1 +1,286 @@
-{"sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement":{"type":"announcement","settings":{"text":"🎉 FREE SHIPPING ON ORDERS OVER $35 | SHOP NEW ARRIVALS →","link":"\/collections\/new-arrivals"}}},"block_order":["announcement"],"settings":{"auto_rotate":false,"change_slides_speed":5,"color_scheme":"scheme-2","show_line_separator":true,"show_social":false,"enable_country_selector":false,"enable_language_selector":false}},"image-banner":{"type":"image-banner","blocks":[{"type":"heading","settings":{"heading":"BOLD CASES FOR BOLD PEOPLE","heading_size":"hxl"}},{"type":"text","settings":{"text":"Protect your phone in style with our premium impact-resistant cases."}},{"type":"buttons","settings":{"button_label_1":"SHOP NOW","button_link_1":"\/collections\/all","button_style_secondary_1":false,"button_label_2":"NEW ARRIVALS","button_link_2":"\/collections\/new-arrivals","button_style_secondary_2":true}}],"settings":{"image":"shopify:\/\/shop_images\/hero-image.jpg","image_overlay_opacity":30,"image_height":"large","image_behavior":"none","desktop_content_position":"middle-left","desktop_content_alignment":"left","show_text_box":true,"stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true,"color_scheme":"scheme-2"}},"multicolumn":{"type":"multicolumn","blocks":[{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">🚚</div><p><strong>Free Shipping Over $35</strong></p><p>On all orders over $35</p>"}},{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">🔄</div><p><strong>30-Day Easy Returns</strong></p><p>Hassle-free returns within 30 days</p>"}},{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">🛡️</div><p><strong>1-Year Warranty</strong></p><p>Free replacements for manufacturing defects</p>"}},{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">⭐</div><p><strong>50,000+ Happy Customers</strong></p><p>Join our growing community</p>"}}],"block_order":["text","text","text","text"],"settings":{"heading":"","color_scheme":"scheme-3","column_alignment":"center","image_width":"small"}},"collection-list":{"type":"collection-list","settings":{"collection":"all","collections_to_show":[{"href":"\/collections\/iphone"},{"href":"\/collections\/samsung"},{"href":"\/collections\/accessories"}],"title":"SHOP BY COLLECTION","image_ratio":"adapt","image_shape":"default","columns_desktop":3,"columns_mobile":"2","color_scheme":"scheme-1","padding_top":60,"padding_bottom":60}},"featured-collection":{"type":"featured-collection","settings":{"collection":"best-sellers","title":"BEST SELLERS","description":"The styles everyone is loving right now.","products_to_show":8,"columns_desktop":4,"columns_mobile":"2","image_ratio":"1:1","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"quick_add":"button","color_scheme":"scheme-1","padding_top":60,"padding_bottom":60}},"image-with-text-0":{"type":"image-with-text","blocks":[{"type":"button","settings":{"button_label":"Our Story","button_link":"\/pages\/about","button_style_secondary":true}}],"block_order":["button"],"settings":{"image":"shopify:\/\/shop_images\/brand-story.jpg","height":"adapt","desktop_image_width":"medium","layout":"image_first","image_behavior":"none","content_layout":"overlay","desktop_content_position":"middle","desktop_content_alignment":"center","mobile_content_alignment":"center","section_color_scheme":"scheme-1","color_scheme":"scheme-1","padding_top":60,"padding_bottom":60}},"multicolumn-0":{"type":"multicolumn","blocks":[{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">⭐⭐⭐⭐⭐</div><p>\"These cases are amazing! The quality is top-notch and they look incredible on my phone.\"</p><p>— Sarah K., New York</p>"}},{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">⭐⭐⭐⭐⭐</div><p>\"Best phone case I've ever owned. Dropped my phone multiple times and it's still protected perfectly.\"</p><p>— Mike R., Los Angeles</p>"}},{"type":"text","settings":{"heading":"","text":"<div class=\"icon-wrap\">⭐⭐⭐⭐⭐</div><p>\"Love the designs! Got so many compliments on my case. Definitely buying more.\"</p><p>— Jessica M., Chicago</p>"}}],"block_order":["text","text","text"],"settings":{"heading":"WHAT OUR CUSTOMERS SAY","color_scheme":"scheme-3","column_alignment":"center","image_width":"small"}},"logo-list":{"type":"logo-list","settings":{"heading":"AS SEEN IN","color_scheme":"scheme-1"}},"email-signup":{"type":"email-signup","settings":{"heading":"JOIN THE COMMUNITY","description":"Get 15% off your first order + early access to new drops.","placeholder":"Enter your email address","button_label":"GET 15% OFF","color_scheme":"scheme-2"}}},"order":["announcement-bar","header-group","image-banner","multicolumn","collection-list","featured-collection","image-with-text-0","multicolumn-0","logo-list","email-signup","footer"]}
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "text": "\ud83c\udf89 FREE SHIPPING ON ORDERS OVER $35 | SHOP NEW ARRIVALS \u2192",
+            "link": "/collections/new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "announcement"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-2",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "heading": "BOLD CASES FOR BOLD PEOPLE",
+            "heading_size": "hxl"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "Protect your phone in style with our premium impact-resistant cases."
+          }
+        },
+        {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "/collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "NEW ARRIVALS",
+            "button_link_2": "/collections/new-arrivals",
+            "button_style_secondary_2": true
+          }
+        }
+      ],
+      "settings": {
+        "image": "shopify://shop_images/hero-image.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": true,
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\ud83d\ude9a</div><p><strong>Free Shipping Over $35</strong></p><p>On all orders over $35</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\ud83d\udd04</div><p><strong>30-Day Easy Returns</strong></p><p>Hassle-free returns within 30 days</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\ud83d\udee1\ufe0f</div><p><strong>1-Year Warranty</strong></p><p>Free replacements for manufacturing defects</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\u2b50</div><p><strong>50,000+ Happy Customers</strong></p><p>Join our growing community</p>"
+          }
+        }
+      ],
+      "block_order": [
+        "text",
+        "text",
+        "text",
+        "text"
+      ],
+      "settings": {
+        "heading": "",
+        "color_scheme": "scheme-3",
+        "column_alignment": "center",
+        "image_width": "small"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "settings": {
+        "collection": "all",
+        "collections_to_show": [
+          {
+            "href": "/collections/iphone"
+          },
+          {
+            "href": "/collections/samsung"
+          },
+          {
+            "href": "/collections/accessories"
+          }
+        ],
+        "title": "SHOP BY COLLECTION",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "best-sellers",
+        "title": "BEST SELLERS",
+        "description": "The styles everyone is loving right now.",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "image_ratio": "1:1",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "button",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "image-with-text-0": {
+      "type": "image-with-text",
+      "blocks": {
+        "promo_badge": {
+          "type": "promo_badge",
+          "settings": {
+            "badge_text": "\ud83d\udd25 Best Seller"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Premium Protection for Your Device"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Military-grade protection, MagSafe compatible, and a slim design that feels as good as it looks.</p>"
+          }
+        },
+        "subtext": {
+          "type": "subtext",
+          "settings": {
+            "subtext": "\ud83d\ude9a Free shipping over $50 \u00b7 Easy 30-day returns"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "/collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "promo_badge",
+        "heading",
+        "text",
+        "subtext",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/brand-story.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "multicolumn-0": {
+      "type": "multicolumn",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\u2b50\u2b50\u2b50\u2b50\u2b50</div><p>\"These cases are amazing! The quality is top-notch and they look incredible on my phone.\"</p><p>\u2014 Sarah K., New York</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\u2b50\u2b50\u2b50\u2b50\u2b50</div><p>\"Best phone case I've ever owned. Dropped my phone multiple times and it's still protected perfectly.\"</p><p>\u2014 Mike R., Los Angeles</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<div class=\"icon-wrap\">\u2b50\u2b50\u2b50\u2b50\u2b50</div><p>\"Love the designs! Got so many compliments on my case. Definitely buying more.\"</p><p>\u2014 Jessica M., Chicago</p>"
+          }
+        }
+      ],
+      "block_order": [
+        "text",
+        "text",
+        "text"
+      ],
+      "settings": {
+        "heading": "WHAT OUR CUSTOMERS SAY",
+        "color_scheme": "scheme-3",
+        "column_alignment": "center",
+        "image_width": "small"
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "settings": {
+        "heading": "AS SEEN IN",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "email-signup": {
+      "type": "email-signup",
+      "settings": {
+        "heading": "JOIN THE COMMUNITY",
+        "description": "Get 15% off your first order + early access to new drops.",
+        "placeholder": "Enter your email address",
+        "button_label": "GET 15% OFF",
+        "color_scheme": "scheme-2"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header-group",
+    "image-banner",
+    "multicolumn",
+    "collection-list",
+    "featured-collection",
+    "image-with-text-0",
+    "multicolumn-0",
+    "logo-list",
+    "email-signup",
+    "footer"
+  ]
+}
