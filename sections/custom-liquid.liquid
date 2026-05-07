@@ -1,0 +1,402 @@
+{% comment %}
+  Scrolling Marquee / Ticker Announcement Bar
+  Install: Upload to sections/ in your Shopify theme
+{% endcomment %}
+
+{%- liquid
+  assign letter_spacing = section.settings.letter_spacing | divided_by: 100.0
+-%}
+
+{%- style -%}
+  #marquee-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding: {{ section.settings.bar_padding }}px 0;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    {% if section.settings.show_border_top %}border-top: 1px solid {{ section.settings.border_color }};{% endif %}
+    {% if section.settings.show_border_bottom %}border-bottom: 1px solid {{ section.settings.border_color }};{% endif %}
+  }
+
+  #marquee-{{ section.id }} .marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: marquee-{{ section.id }} {{ section.settings.scroll_speed }}s linear infinite;
+    will-change: transform;
+  }
+
+  {% if section.settings.pause_on_hover %}
+  #marquee-{{ section.id }}:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  {% endif %}
+
+  #marquee-{{ section.id }} .marquee-set {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  #marquee-{{ section.id }} .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: {{ section.settings.font_size }}px;
+    font-weight: {{ section.settings.font_weight }};
+    color: {{ section.settings.text_color }};
+    letter-spacing: {{ letter_spacing }}em;
+    text-transform: {{ section.settings.text_transform }};
+    line-height: 1;
+  }
+
+  #marquee-{{ section.id }} .marquee-item a {
+    color: {{ section.settings.text_color }};
+    text-decoration: none;
+  }
+
+  #marquee-{{ section.id }} .marquee-item a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #marquee-{{ section.id }} .marquee-sep {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 {{ section.settings.separator_spacing }}px;
+    color: {{ section.settings.separator_color }};
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  @keyframes marquee-{{ section.id }} {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  {% if section.settings.show_fade_edges %}
+  #marquee-{{ section.id }}::before,
+  #marquee-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  #marquee-{{ section.id }}::before {
+    left: 0;
+    background: linear-gradient(to right, {{ section.settings.background_color }}, transparent);
+  }
+  #marquee-{{ section.id }}::after {
+    right: 0;
+    background: linear-gradient(to left, {{ section.settings.background_color }}, transparent);
+  }
+  {% endif %}
+{%- endstyle -%}
+
+<div id="marquee-{{ section.id }}" role="marquee" aria-label="{{ section.settings.aria_label }}">
+  <div class="marquee-track" id="marquee-track-{{ section.id }}">
+
+    {%- for i in (1..2) -%}
+      <div class="marquee-set" {% if i == 2 %}aria-hidden="true"{% endif %}>
+        {%- for block in section.blocks -%}
+          {%- unless forloop.first -%}
+            <span class="marquee-sep" aria-hidden="true">{{ section.settings.separator_char }}</span>
+          {%- endunless -%}
+          {%- case block.type -%}
+            {%- when 'text_item' -%}
+              <span class="marquee-item" {{ block.shopify_attributes }}>
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+                {%- else -%}
+                  {{ block.settings.text }}
+                {%- endif -%}
+              </span>
+            {%- when 'icon_text_item' -%}
+              <span class="marquee-item" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <span aria-hidden="true" style="margin-right:{{ block.settings.icon_gap }}px;line-height:1;">{{ block.settings.icon }}</span>
+                {%- endif -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+                {%- else -%}
+                  {{ block.settings.text }}
+                {%- endif -%}
+              </span>
+          {%- endcase -%}
+        {%- endfor -%}
+        <span class="marquee-sep" aria-hidden="true">{{ section.settings.separator_char }}</span>
+      </div>
+    {%- endfor -%}
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var track = document.getElementById('marquee-track-{{ section.id }}');
+    if (!track) return;
+    function calibrate() {
+      var set = track.querySelector('.marquee-set');
+      if (!set) return;
+      var w = set.offsetWidth;
+      if (w === 0) return;
+      var pxPerSec = {{ section.settings.scroll_speed }} * 40;
+      var dur = Math.max(4, Math.min(200, w / pxPerSec));
+      track.style.animationDuration = dur.toFixed(2) + 's';
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(calibrate);
+    } else {
+      setTimeout(calibrate, 300);
+    }
+    window.addEventListener('resize', calibrate);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Marquee Ticker",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "bar_padding",
+      "label": "Bar padding",
+      "min": 6,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_top",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_bottom",
+      "label": "Show bottom border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fade_edges",
+      "label": "Fade edges",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra Bold" }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text case",
+      "options": [
+        { "value": "none", "label": "As written" },
+        { "value": "uppercase", "label": "UPPERCASE" },
+        { "value": "lowercase", "label": "lowercase" },
+        { "value": "capitalize", "label": "Title Case" }
+      ],
+      "default": "none"
+    },
+{
+  "type": "range",
+  "id": "letter_spacing",
+  "label": "Letter spacing",
+  "min": 0,
+  "max": 20,
+  "step": 1,
+  "unit": "em",
+  "default": 3
+},
+    {
+      "type": "header",
+      "content": "Scroll"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "info": "Higher = faster",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Separator"
+    },
+    {
+      "type": "text",
+      "id": "separator_char",
+      "label": "Separator",
+      "info": "Try: ✦  •  /  |  ★  ◆  ✿  —",
+      "default": "✦"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "separator_spacing",
+      "label": "Separator spacing",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Accessibility"
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Screen reader label",
+      "default": "Announcements"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Free shipping on orders over $50"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    },
+    {
+      "type": "icon_text_item",
+      "name": "Icon + Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon or Emoji",
+          "default": "🎉"
+        },
+        {
+          "type": "range",
+          "id": "icon_gap",
+          "label": "Gap after icon",
+          "min": 2,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "default": 6
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Sale ends Sunday!"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Ticker",
+      "blocks": [
+        {
+          "type": "text_item",
+          "settings": { "text": "Free shipping on all orders over $50" }
+        },
+        {
+          "type": "icon_text_item",
+          "settings": { "icon": "✨", "text": "New arrivals just dropped" }
+        },
+        {
+          "type": "text_item",
+          "settings": { "text": "Use code WELCOME10 for 10% off your first order" }
+        },
+        {
+          "type": "icon_text_item",
+          "settings": { "icon": "🚚", "text": "Same-day dispatch before 2pm" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
