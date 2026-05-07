@@ -11,13 +11,211 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_with_text_iGYNxp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DHNmYV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Premium Protection for Your Device"
+          }
+        },
+        "text_wCKGeb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MagSafe compatible, and a slim design.</p>"
+          }
+        },
+        "button_UQCibm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DHNmYV",
+        "text_wCKGeb",
+        "button_UQCibm"
+      ],
+      "name": "Premium Image with Text",
+      "settings": {
+        "layout": "text_first",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_facUYK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E66mLf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_7qVHAK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_DCQdTN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_E66mLf",
+        "text_7qVHAK",
+        "button_DCQdTN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collection_list_qcW74q": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_qiEVQU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_VpdbDy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_wqdAAB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_qiEVQU",
+        "featured_collection_VpdbDy",
+        "featured_collection_wqdAAB"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_wQRE3i": {
+      "type": "featured-product",
+      "blocks": {
+        "text_wmh3bQ": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_biWwBD": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_pyfWjc": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_NQVgJV": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_tDYdGr": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_3iQMyc": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_Hi7my7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_wmh3bQ",
+        "title_biWwBD",
+        "price_pyfWjc",
+        "variant_picker_NQVgJV",
+        "quantity_selector_tDYdGr",
+        "buy_buttons_3iQMyc",
+        "share_Hi7my7"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_iGYNxp",
+    "rich_text_facUYK",
+    "collection_list_qcW74q",
+    "featured_product_wQRE3i"
   ]
 }
